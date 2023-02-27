@@ -11,6 +11,8 @@ const add = document.querySelector("#add_btn");
 const tableBody = document.querySelector("#table_body")
 
 
+
+// listener for taking inputs 
 add.addEventListener('click', (e) => {
     e.preventDefault();
     console.log(personName.value);
@@ -39,6 +41,7 @@ add.addEventListener('click', (e) => {
 
 
 
+// listener for delete and edit
 tableBody.addEventListener('click', (e) => {
     if(e.target.classList.contains('delete')) {
         console.log('click on delete')
