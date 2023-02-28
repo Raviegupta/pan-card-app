@@ -10,6 +10,8 @@ const add = document.querySelector("#add_btn");
 const tableBody = document.querySelector("#table_body");
 
 
+
+
 // addEventListener for taking inputs.
 add.addEventListener("click", (e) => {
   e.preventDefault();
@@ -25,8 +27,8 @@ add.addEventListener("click", (e) => {
     <td>${personQualification.value}</td>
     <td>${personPanNo.value}</td>
     <td>
-        <button class="btn">edit</button>
-        <button class="btn">delete</button>
+        <button class="btn edit">edit</button>
+        <button class="btn delete">delete</button>
     </td>
     </tr>`;
     personName.value = '';
@@ -34,3 +36,36 @@ add.addEventListener("click", (e) => {
     personQualification.value = '';
     personPanNo.value = '';
 });
+
+
+
+// addEventListener for delete & edit the person data
+tableBody.addEventListener('click', (e) => {
+    
+    if(e.target.classList.contains('delete')) {
+        console.log('click on delete');
+        e.target.parentNode.parentNode.remove();
+    }
+
+    if(e.target.classList.contains('edit')) {
+        console.log('click on edit');
+        let personNameEdit = e.target.parentNode.parentNode.firstElementChild;
+        let personAgeEdit = personNameEdit.nextElementSibling;
+        let personQualificationEdit = personAgeEdit.nextElementSibling;
+        let personPanNoEdit = personQualificationEdit.nextElementSibling;
+
+        console.log(personNameEdit);
+        console.log(personAgeEdit);
+        console.log(personQualificationEdit);
+        console.log(personPanNoEdit);
+
+        personName.value = personNameEdit.innerHTML;
+        personAge.value = personAgeEdit.innerHTML;
+        personQualification.value = personQualificationEdit.innerHTML;
+        personPanNo.value = personPanNoEdit.innerHTML;
+
+
+    }
+    
+
+})
