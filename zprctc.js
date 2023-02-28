@@ -35,6 +35,8 @@ add.addEventListener("click", (e) => {
     personAge.value = '';
     personQualification.value = '';
     personPanNo.value = '';
+
+    add.innerHTML = 'Add';
 });
 
 
@@ -63,6 +65,8 @@ tableBody.addEventListener('click', (e) => {
         personAge.value = personAgeEdit.innerHTML;
         personQualification.value = personQualificationEdit.innerHTML;
         personPanNo.value = personPanNoEdit.innerHTML;
+
+        add.innerHTML = 'Save';
 
 
     }
